@@ -1,9 +1,15 @@
 
-import { ContactsList, Filter, FormAddContacts, Loader } from "components";
-import { useEffect } from "react";
+import { Loader } from "components";
+import { Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchContacts } from "./redux/operations";
 import { selectError, selectIsLoading } from "./redux/selectors";
+import HomePage from "pages/HomePage";
+import ContactsPage from "pages/ContactsPage";
+import { Route, Routes } from "react-router-dom";
+import LoginPage from "pages/LoginPage";
+import RegisterPage from "pages/RegisterPage";
+import Layout from "components/Layout/Layout";
 
 
 export const App = () => {
@@ -16,14 +22,16 @@ export const App = () => {
   }, [dispatch])
  
   return (
-    <div className="phone_book">
-      <h1>Phone Book</h1>
-      <FormAddContacts />
-      <h2>Contacts</h2>
-      <Filter />
-      <ContactsList/>
-      {isLoading && (<Loader/>)}
-      {error && <p>Error</p>}
-    </div>
+    <Layout>
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route path='/' element={ <HomePage /> }/>
+        <Route path='/register' element={ <RegisterPage /> }/>
+        <Route path='/login' element={ <LoginPage /> }/>
+        <Route path='/contacts' element={ <ContactsPage /> }/>
+    
+    </Routes>
+    </Suspense>
+    </Layout>
   );
 };
