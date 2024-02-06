@@ -3,8 +3,8 @@ import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 
 import css from './Form.module.css';
-import { selectContacts } from '../../redux/selectors';
-import { addContact } from '../../redux/operations';
+import { selectContacts } from '../../redux/contacts/selectors';
+import { addContact } from '../../redux/contacts/operations';
 
 
 
@@ -16,7 +16,6 @@ export const FormAddContacts = () => {
 
   const handleAddContact = (contact, formReset) => {
     const newContact = {
-      id: nanoid(),
       name: contact.name,
       number: contact.number,
     };
@@ -64,7 +63,7 @@ export const FormAddContacts = () => {
   };
 
   return (
-    <form className={css.addForm} onSubmit={event => handleSubmit(event)}>
+    <form className={css.addForm} onSubmit={handleSubmit}>
       <div className={css.inputForm}>
         <label htmlFor="name">Name:</label>
         <input

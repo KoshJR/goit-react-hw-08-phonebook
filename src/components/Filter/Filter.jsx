@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { getFilterValue} from '../../redux/contacts/contactsSlice';
 import css from './Filter.module.css';
-import { selectStatusFilter } from '../../redux/selectors';
+import { selectStatusFilter } from '../../redux/contacts/selectors';
 
 
 
