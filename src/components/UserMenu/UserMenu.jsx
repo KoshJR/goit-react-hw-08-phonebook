@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { apiLogoutUser } from '../../redux/auth/authSlice'
 import { selectAuthIsLoading, selectAuthUserData } from '../../redux/auth/authSlice.selectors'
-
+import css from './UserMenu.module.css'
 
 
 const UserMenu = () => {
@@ -14,9 +14,9 @@ const UserMenu = () => {
   const handleLogOut = () => dispatch(apiLogoutUser());
 
   return (
-    <div>
+    <div className={css.userMenu}>
     <p>{userEmail}</p>
-    <button onClick={handleLogOut} disabled={isLoading} type="button">
+    <button onClick={handleLogOut} disabled={isLoading} type="button" className={css.logOutBtn}>
       Logout
     </button>
   </div>

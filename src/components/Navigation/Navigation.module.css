@@ -1,0 +1,19 @@
+.menuList {
+    display: flex;
+    gap: 15px;
+    
+}
+
+.navLink {
+    list-style: none;
+    text-decoration: none;
+    font-size: 18px;
+    color: #e98074 ;
+    border-radius: 10px;
+}
+.navLink:hover {
+    color: #e85a4f ;
+}
+.active {
+    color: #8e8d8a;
+}

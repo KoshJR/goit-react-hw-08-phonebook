@@ -1,8 +1,9 @@
 .addForm {
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 15px;
-  width: 758px;
 }
 .inputForm {
   display: flex;

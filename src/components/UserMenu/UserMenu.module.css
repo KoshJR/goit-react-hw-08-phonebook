@@ -1,0 +1,19 @@
+.userMenu {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    color: #e98074 ;
+}
+
+.logOutBtn {
+    border-radius: 10px;
+    width: 80px;
+    border: 1px solid #e98074;
+    background-color: #e85a4f;
+}
+
+.logOutBtn:hover {
+    background-color: #e85a4f;
+    scale: 1.2;
+    color: #8e8d8a;
+}
