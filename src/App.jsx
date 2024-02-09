@@ -1,16 +1,18 @@
 
 import { Loader } from "components";
-import { Suspense, useEffect } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import HomePage from "pages/HomePage";
-import ContactsPage from "pages/ContactsPage";
 import { Navigate, Route, Routes } from "react-router-dom";
-import LoginPage from "pages/LoginPage";
-import RegisterPage from "pages/RegisterPage";
-import Layout from "components/Layout/Layout";
 import { apiRefreshUser } from "./redux/auth/authSlice";
-import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute"
-import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+
+
+
+import {Layout, RestrictedRoute, PrivateRoute} from "components";
+
+const HomePage = lazy(() => import('pages/HomePage'));
+const RegisterPage = lazy(() => import('pages/RegisterPage'));
+const LoginPage = lazy(() => import('pages/LoginPage'));
+const ContactsPage = lazy(() => import('pages/ContactsPage'));
 
 
 export const App = () => {

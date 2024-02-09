@@ -2,6 +2,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { apiRegisterUser } from '../redux/auth/authSlice';
 
+import css from "../components/Layout/Layout.module.css"
+
 const RegisterPage = () => {
 const dispatch = useDispatch();
 
@@ -22,32 +24,35 @@ const onSubmit = e => {
   
 
   return (
-    <div>
-      <h1>RegisterPage</h1>
+    <div className={css.userForm}>
+      <h1 className={css.mainTitle}>RegisterPage</h1>
 
-      <form onSubmit={onSubmit}>
-        <label>
+      <form className={css.userInputForm} onSubmit={onSubmit}>
+        <label className={css.inputItem}>
           Name:
           <input
+            className={css.inputLine}
             type="text"
             name="userName"
-            placeholder="Rikki"
+            placeholder="Your Name"
             minLength={2}
             required
           />
         </label>
-        <label>
+        <label className={css.inputItem}>
           Email:
           <input
+            className={css.inputLine}
             type="email"
             name="userEmail"
-            placeholder="rikkiGG@gmail.com"
+            placeholder="example@gmail.com"
             required
           />
-        </label>
-        <label>
+        </label >
+        <label className={css.inputItem}>
           Password:
           <input
+          className={css.inputLine}
             type="password"
             name="userPassword"
             placeholder="**********"
@@ -55,7 +60,7 @@ const onSubmit = e => {
             required
           />
         </label>
-        <button type="submit">Sign Up</button>
+        <button  className={css.registerBtn} type="submit">Sign Up</button>
       </form>
     </div>
   );

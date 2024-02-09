@@ -16,7 +16,6 @@ export const ContactsList = () => {
 
   
     
-  
 
   return (
     <ul className={css.contactsList}>

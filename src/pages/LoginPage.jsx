@@ -2,6 +2,9 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { apiLoginUser } from '../redux/auth/authSlice';
 
+import css from "../components/Layout/Layout.module.css"
+
+
 const LoginPage = () => {
   const dispatch = useDispatch()
   
@@ -18,22 +21,25 @@ const LoginPage = () => {
   }
 
   return (
-    <div>
-      <h1>LoginPage</h1>
+    <div className={css.userForm}>
+      <h1 className={css.mainTitle}>Welcome, Sign In please!</h1>
 
-      <form onSubmit={onSubmit}>
-        <label>
+      <form className={css.userInputForm} onSubmit={onSubmit}>
+        <label className={css.inputItem}>
           Email:
           <input
+            className={css.inputLine}
             type="email"
             name="userEmail"
             placeholder="example@anymail.com"
             required
           />
         </label>
-        <label>
+        <label className={css.inputItem}>
           Password:
           <input
+            
+            className={css.inputLine}
             type="password"
             name="userPassword"
             placeholder="**********"
@@ -41,7 +47,7 @@ const LoginPage = () => {
             required
           />
         </label>
-        <button type="submit">Sign In</button>
+        <button className={css.registerBtn}  type="submit">Sign In</button>
       </form>
     </div>
   );

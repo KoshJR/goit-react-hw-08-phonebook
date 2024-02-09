@@ -1,19 +1,25 @@
 .userMenu {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 15px;
-    color: #e98074 ;
+    color: #40A2E3 ;
 }
 
 .logOutBtn {
-    border-radius: 10px;
-    width: 80px;
-    border: 1px solid #e98074;
-    background-color: #e85a4f;
+    width: 60px;
+  height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+    border: none;
+    background-color: #40A2E3;
+    color: #edf9fa;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logOutBtn:hover {
-    background-color: #e85a4f;
-    scale: 1.2;
-    color: #8e8d8a;
+    background-color: #0D9276;
+    
 }
